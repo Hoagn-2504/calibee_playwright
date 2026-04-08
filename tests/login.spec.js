@@ -14,12 +14,21 @@ const cases = [
     email: "hoangvu25042004@gmail.com",
     password: "123",
     success: false,
+    expectedError: "auth.failed",
   },
   {
     name: "wrong email",
     email: "fake@gmail.com",
     password: "Abc123",
     success: false,
+    expectedError: "auth.failed",
+  },
+  {
+    name: "empty login",
+    email: "",
+    password: "",
+    success: false,
+    expectedError: "validation.required", 
   },
 ];
 
@@ -36,19 +45,17 @@ for (const c of cases) {
       .fill(c.password);
 
     if (c.success) {
-      // CÁCH MỚI: Chỉ cần click, sau đó dùng expect để check URL.
-      // Playwright sẽ tự động chờ cho đến khi URL khớp, tối đa 15s.
+      // Nhánh thành công
       await page.getByRole("button", { name: "Đăng nhập" }).click();
-
       await expect(page).toHaveURL("https://admin.calibee.vn/", {
         timeout: 15000,
       });
     } else {
+      // Nhánh thất bại (sai pass, sai email, để trống)
       await page.getByRole("button", { name: "Đăng nhập" }).click();
 
-      // KHẮC PHỤC STRICT MODE: Thêm .first() vào cuối locator
-      // KHẮC PHỤC TIMEOUT: Tăng thời gian chờ lên 10s đề phòng backend phản hồi chậm
-      await expect(page.getByText("auth.failed").first()).toBeVisible({
+      // Kiểm tra linh hoạt theo từng expectedError tương ứng
+      await expect(page.getByText(c.expectedError).first()).toBeVisible({
         timeout: 10000,
       });
 
