@@ -45,16 +45,12 @@ for (const c of cases) {
       .fill(c.password);
 
     if (c.success) {
-      // Nhánh thành công
       await page.getByRole("button", { name: "Đăng nhập" }).click();
       await expect(page).toHaveURL("https://admin.calibee.vn/", {
         timeout: 15000,
       });
     } else {
-      // Nhánh thất bại (sai pass, sai email, để trống)
       await page.getByRole("button", { name: "Đăng nhập" }).click();
-
-      // Kiểm tra linh hoạt theo từng expectedError tương ứng
       await expect(page.getByText(c.expectedError).first()).toBeVisible({
         timeout: 10000,
       });
