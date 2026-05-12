@@ -1,7 +1,6 @@
 import { test, expect } from "@playwright/test";
 
 const URL = "https://admin.calibee.vn/login";
-
 const cases = [
   {
     name: "success",
