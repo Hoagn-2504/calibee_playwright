@@ -1,4 +1,4 @@
-name: Automation Test
+name: Playwright Tests
 on:
   push:
     branches: [main, master]
@@ -17,15 +17,8 @@ jobs:
         run: npm ci
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
-      - name: Run list pages test
-        run: npx playwright test tests/list_pages.spec.js
-        env:
-          ADMIN_BASE_URL: ${{ secrets.ADMIN_BASE_URL }}
-          ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
-          ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
-          BOOKING_SERVICE_MODE: random
-          BOOKING_SERVICE: random
-          UPDATE_BOOKING_STATUS: "false"
+      - name: Run login test
+        run: npx playwright test tests/login.spec.js
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
