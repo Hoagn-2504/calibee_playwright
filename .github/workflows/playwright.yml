@@ -4,10 +4,15 @@ on:
     branches: [main, master]
   pull_request:
     branches: [main, master]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   test:
-    timeout-minutes: 60
+    timeout-minutes: 30
     runs-on: ubuntu-latest
+    container:
+      image: mcr.microsoft.com/playwright:v1.59.1-noble
     env:
       ADMIN_BASE_URL: ${{ secrets.ADMIN_BASE_URL }}
       ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
@@ -20,15 +25,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-      - name: Run Login test
-        run: npx playwright test tests/login.spec.js
+      - name: Run Dashboard test
+        run: npx playwright test tests/dashboard.spec.js --project=chromium --workers=2 --retries=1
       - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
+        if: ${{ failure() }}
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 30
+          retention-days: 7
