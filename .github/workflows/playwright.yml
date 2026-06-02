@@ -29,7 +29,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run Booking test
-        run: npx playwright test tests/booking_service.spec.js --project=chromium
+        run: npx playwright test tests/book_service.spec.js --project=chromium
       - uses: actions/upload-artifact@v4
         if: ${{ failure() }}
         with:
