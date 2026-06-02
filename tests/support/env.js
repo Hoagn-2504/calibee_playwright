@@ -18,7 +18,7 @@ export const bookingConfig = {
   shouldUpdateStatus: process.env.UPDATE_BOOKING_STATUS === 'true',
   timeoutMs: Number(process.env.TEST_TIMEOUT_MS || 300000),
   calculateOnly: process.env.CALCULATE_ONLY === 'true',
-  timeMode: process.env.BOOKING_TIME_MODE || 'fixed',
+  timeMode: process.env.BOOKING_TIME_MODE || 'random',
   minDurationHours: Number(process.env.BOOKING_MIN_DURATION_HOURS || 2),
   maxDurationHours: Number(process.env.BOOKING_MAX_DURATION_HOURS || 8),
   startTime: process.env.BOOKING_START_TIME || '09:00',
