@@ -17,8 +17,15 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run Playwright tests
-      run: npx playwright test
+    - name: Run booking test
+      run: npm run test:booking
+      env:
+        ADMIN_BASE_URL: ${{ secrets.ADMIN_BASE_URL }}
+        ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
+        ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
+        BOOKING_SERVICE_MODE: random
+        BOOKING_SERVICE: random
+        UPDATE_BOOKING_STATUS: "false"
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:

@@ -1,0 +1,1199 @@
+{
+  "basic_cleaning": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnTotalAreaChoice",
+        "text": "Chọn tổng diện tích\n                        \n                            keyboard_arrow_down",
+        "dropdownListId": "dropdownListTotalArea"
+      },
+      {
+        "id": "btnForeignLanguageChoice",
+        "text": "Không",
+        "dropdownListId": "dropdownListForeignLanguage"
+      },
+      {
+        "id": "btnTotalTimeChoice",
+        "text": "Chờ gọi API tính tiền\n                        \n                            keyboard_arrow_down",
+        "dropdownListId": "dropdownListTotalTime"
+      },
+      {
+        "id": "btnAmountWorkerChoice",
+        "text": "Chờ gọi API tính tiền\n                        \n                            keyboard_arrow_down",
+        "dropdownListId": "dropdownListAmountWorker"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Chọn tổng diện tích",
+      "Ghi chú cho người làm",
+      "Thú cưng / Vật nuôi",
+      "Không",
+      "Có",
+      "Ủi quần áo",
+      "Giặt tay",
+      "Mang theo dụng cụ",
+      "Ưu tiên người làm yêu thích",
+      "Loại dịch vụ",
+      "Standard",
+      "Premium",
+      "Nhân viên biết ngoại ngữ",
+      "Chọn ngày làm việc",
+      "Chọn giờ làm việc",
+      "Chọn thời lượng",
+      "Số lượng nhân viên",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "subscription_service": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnTotalAreaChoice",
+        "text": "Chọn tổng diện tích\n                        \n                            keyboard_arrow_down",
+        "dropdownListId": "dropdownListTotalArea"
+      },
+      {
+        "id": "btnForeignLanguageChoice",
+        "text": "Không",
+        "dropdownListId": "dropdownListForeignLanguage"
+      },
+      {
+        "id": "btnPackageChoice",
+        "text": "Tuỳ chọn\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListPackage"
+      },
+      {
+        "id": "btnTotalTimeChoice",
+        "text": "Chờ gọi API tính tiền\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListTotalTime"
+      },
+      {
+        "id": "btnAmountWorkerChoice",
+        "text": "Chờ gọi API tính tiền\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListAmountWorker"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Chọn tổng diện tích",
+      "Ghi chú cho người làm",
+      "Mang theo dụng cụ",
+      "Không",
+      "Có",
+      "Thú cưng / Vật nuôi",
+      "Ủi quần áo",
+      "Giặt tay",
+      "Ưu tiên người làm yêu thích",
+      "Loại dịch vụ",
+      "Standard",
+      "Premium",
+      "Nhân viên biết ngoại ngữ",
+      "Chọn giờ làm việc",
+      "Chọn ngày bắt đầu",
+      "Chọn ngày kết thúc",
+      "Chọn gói cố định",
+      "Chọn thời lượng",
+      "Số lượng nhân viên",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "deep_cleaning": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnTotalAreaChoice",
+        "text": "Chọn tổng diện tích\n                        \n                            keyboard_arrow_down",
+        "dropdownListId": "dropdownListTotalArea"
+      },
+      {
+        "id": "choiceAmountPartner",
+        "text": "1",
+        "dropdownListId": "dropdownListAmountPartner"
+      },
+      {
+        "id": "btnForeignLanguageChoice",
+        "text": "Không",
+        "dropdownListId": "dropdownListForeignLanguage"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Chọn tổng diện tích",
+      "Chọn số lượng CTV",
+      "Ghi chú cho người làm",
+      "Thú cưng / Vật nuôi",
+      "Không",
+      "Có",
+      "Ủi quần áo",
+      "Giặt tay",
+      "Mang theo dụng cụ",
+      "CTV mang theo thang",
+      "Loại dịch vụ",
+      "Standard",
+      "Premium",
+      "Nhân viên biết ngoại ngữ",
+      "Ngày bắt đầu",
+      "Từ",
+      "Ngày kết thúc",
+      "Đến",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "air_condition": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Vệ sinh",
+      "Vệ sinh máy lạnh định kỳ\n                                    Vệ sinh, bảo dưỡng theo gói",
+      "Lắp đặt",
+      "Lắp đặt máy lạnh\n                                    Khảo sát, báo giá, cung cấp và lắp đặt máy lạnh",
+      "Sửa chữa",
+      "Khắc phục máy chảy nước\n                                    \n                                    Rò rỉ, nghẹt ống thoát nước",
+      "Tháo - di dời máy lạnh\n                                    \n                                    Tháo lắp, di chuyển vị trí",
+      "Các lỗi kỹ thuật khác\n                                    \n                                    Thiếu lạnh, kêu to, báo lỗi,...",
+      "Mức vệ sinh",
+      "Vệ sinh cơ bản",
+      "Vệ sinh chuyên sâu",
+      "Máy lạnh treo tường",
+      "Máy lạnh áp trần",
+      "Máy lạnh âm trần",
+      "Điều hòa dạng đứng",
+      "Máy lạnh âm trần nối ống gió",
+      "Tên máy lạnh",
+      "Nhà cung cấp",
+      "Công suất",
+      "Đơn giá / máy",
+      "Số lượng",
+      "Tổng",
+      "Dưới 2 HP",
+      "Trên 2 HP",
+      "Thêm dàn lạnh (multi)",
+      "Dưới 5 HP",
+      "Trên 5 HP",
+      "Ghi chú tình trạng",
+      "Ngày bắt đầu",
+      "Từ",
+      "Ngày kết thúc",
+      "Đến",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "sofa_service": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnTimeFrameTimeChoice",
+        "text": "Chọn khung giờ làm việc",
+        "dropdownListId": "dropdownListTimeFrameTime"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Chọn loại dịch vụ",
+      "Sofa 1 ghế",
+      "Sofa 2 ghế",
+      "Sofa 3 ghế",
+      "Ghế đẩu",
+      "Sofa đơn - 1 chỗ ngồi",
+      "Ghế văn phòng",
+      "Ghi chú",
+      "< 1.5m",
+      "1.5m - 1.8m",
+      "> 1.8m",
+      "Nhỏ hơn 5m²",
+      "5m² - 10m²",
+      "Lớn hơn 10m²",
+      "Rèm hai lớp nhỏ (1.0m - 2.5m)",
+      "Rèm hai lớp lớn (2.5m - 4.0m)",
+      "Rèm đơn",
+      "Ghế đôn",
+      "Chọn ngày làm việc",
+      "Chọn khung giờ làm việc",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "cooking_service": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnAmountEaterChoice",
+        "text": "Chọn số người ăn",
+        "dropdownListId": "dropdownListAmountEater"
+      },
+      {
+        "id": "btnTasteByRegionChoice",
+        "text": "Miền Trung",
+        "dropdownListId": "dropdownListTasteByRegion"
+      },
+      {
+        "id": "btnForeignLanguageChoice",
+        "text": "Không",
+        "dropdownListId": "dropdownListForeignLanguage"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Loại dịch vụ",
+      "Standard",
+      "Premium",
+      "Chọn số người ăn",
+      "Mô tả",
+      "Ít Calo/đường",
+      "Không",
+      "Có",
+      "Ít Cholesterol",
+      "Ít Natri",
+      "Ít Acid Uric",
+      "Ăn chay",
+      "Trẻ em/ Người lớn tuổi",
+      "Chọn khẩu vị theo vùng - miền",
+      "Khác",
+      "Đi chợ",
+      "Ưu tiên người làm yêu thích",
+      "Nhân viên biết ngoại ngữ",
+      "Loại booking",
+      "Một lần",
+      "Định kỳ",
+      "Linh hoạt",
+      "Ngày làm việc",
+      "Từ",
+      "Đến",
+      "Ngày bắt đầu",
+      "Ngày kết thúc",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "elderly_care": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnForeignLanguageChoice",
+        "text": "Không",
+        "dropdownListId": "dropdownListForeignLanguage"
+      },
+      {
+        "id": "btnMobilityCondition",
+        "text": "Có thể tự di chuyển",
+        "dropdownListId": "dropdownListMobilityCondition"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Địa điểm chăm sóc",
+      "Tại nhà",
+      "Tại bệnh viện",
+      "Giới tính",
+      "Nam",
+      "Nữ",
+      "Thú cưng / Vật nuôi",
+      "Không",
+      "Có",
+      "Loại dịch vụ",
+      "Standard",
+      "Premium",
+      "Nhân viên biết ngoại ngữ",
+      "Bệnh lý/bệnh nền của người cao tuổi",
+      "Tình trạng di chuyển của người cao tuổi",
+      "Ghi chú",
+      "Chọn những công việc bạn muốn điều dưỡng viên thực hiện",
+      "Loại booking",
+      "Một lần",
+      "Định kỳ",
+      "Ngày làm việc",
+      "Từ",
+      "Đến",
+      "Ngày bắt đầu",
+      "Ngày kết thúc",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "baby_service": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "choiceAmountPartner",
+        "text": "1",
+        "dropdownListId": "dropdownListAmountPartner"
+      },
+      {
+        "id": "btnForeignLanguageChoice",
+        "text": "Không",
+        "dropdownListId": "dropdownListForeignLanguage"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Số lượng và số tuổi của trẻ",
+      "0 - 6 tháng",
+      "6 - 24 tháng",
+      "Trên 2 tuổi",
+      "Phạm vi công việc",
+      "Chọn các công việc bạn muốn cô bảo mẫu thực hiện",
+      "Mô tả nhu cầu",
+      "Chọn số lượng CTV",
+      "Nhân viên biết ngoại ngữ",
+      "Loại dịch vụ",
+      "Standard",
+      "Premium",
+      "Thú cưng / Vật nuôi",
+      "Không",
+      "Có",
+      "Loại booking",
+      "Một lần",
+      "Định kỳ",
+      "Linh hoạt",
+      "Ngày làm việc",
+      "Từ",
+      "Đến",
+      "Ngày bắt đầu",
+      "Ngày kết thúc",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "cleaning_after_construction": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnAmountWorkerChoice",
+        "text": "1\n                                    \n                                        keyboard_arrow_down",
+        "dropdownListId": "dropdownListAmountWorker"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Mô tả chi tiết",
+      "Chọn ngày làm việc",
+      "Chọn giờ làm việc",
+      "Số lượng nhân viên",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "electrical_service": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Chọn vị trí bạn muốn kỹ thuật viên tiếp cận",
+      "Chọn dịch vụ cần hỗ trợ",
+      "Chọn ngày làm việc",
+      "Từ",
+      "Đến",
+      "Auto",
+      "Manual",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "plumbing_service": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Chọn dịch vụ bạn cần",
+      "Chọn vị trí bạn muốn kỹ thuật viên tiếp cận",
+      "Chọn vấn đề gặp phải",
+      "Chọn ngày làm việc",
+      "Từ",
+      "Đến",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "furniture_service": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Chọn dịch vụ bạn cần",
+      "Chọn vị trí bạn muốn kỹ thuật viên tiếp cận",
+      "Bạn cần sửa chữa/lắp đặt thiết bị, đồ dùng nào?",
+      "Chọn ngày làm việc",
+      "Từ",
+      "Đến",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "locksmith": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnLocksmithServiceTypeChoice",
+        "text": "Chọn loại dịch vụ\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListLocksmithServiceType"
+      },
+      {
+        "id": "btnLocksmithTypeChoice",
+        "text": "Chọn loại khóa cần xử lý\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListLocksmithType"
+      },
+      {
+        "id": "btnLocksmithDoorTypeChoice",
+        "text": "Chọn loại cửa\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListLocksmithDoorType"
+      },
+      {
+        "id": "btnLocksmithKeyTypeChoice",
+        "text": "Chọn loại khóa\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListLocksmithKeyType"
+      },
+      {
+        "id": "btnForeignLanguageChoice",
+        "text": "Không\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListForeignLanguage"
+      },
+      {
+        "id": "btnEstimateTimeChoice",
+        "text": "Chọn thời gian dự kiến bắt đầu\n                                \n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListEstimateTime"
+      },
+      {
+        "id": "btnTimeFrameTimeChoice",
+        "text": "Chọn khung giờ làm việc\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListTimeFrameTime"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Loại dịch vụ",
+      "Loại khóa cần xử lý",
+      "Loại cửa",
+      "Loại khóa",
+      "Ghi chú cho nhân viên",
+      "CTV biết ngoại ngữ",
+      "Hình ảnh thực tế",
+      "Select the estimated start time",
+      "Chọn ngày làm việc",
+      "Select working hours",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "paint_house_service": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnPaintServiceTypeChoice",
+        "text": "Chọn loại dịch vụ sơn\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListPaintServiceType"
+      },
+      {
+        "id": "btnPaintTypeChoice",
+        "text": "Chọn loại sơn\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListPaintType"
+      },
+      {
+        "id": "btnTotalSquareChoice",
+        "text": "Chọn diện tích mặt tường cần sơn\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListTotalSquare"
+      },
+      {
+        "id": "btnCurrentSituationChoice",
+        "text": "Chọn tình hình hiện tại của bức tường\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListCurrentSituation"
+      },
+      {
+        "id": "btnForeignLanguageChoice",
+        "text": "Không\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListForeignLanguage"
+      },
+      {
+        "id": "btnPremiumChoice",
+        "text": "Không\n                                \n                                    keyboard_arrow_down",
+        "dropdownListId": "dropdownListPremium"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Loại dịch vụ sơn",
+      "Loại sơn",
+      "Diện tích mặt tường cần sơn",
+      "Tình hình hiện tại của bức tường",
+      "Ghi chú cho nhân viên",
+      "CTV biết ngoại ngữ",
+      "Sử dụng dịch vụ Premium",
+      "Hình ảnh thực tế",
+      "Chọn ngày làm việc",
+      "Từ",
+      "Đến",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  },
+  "pest_control": {
+    "dropdowns": [
+      {
+        "id": "btnCompanyChoice",
+        "text": "Chọn công ty muốn tạo mới",
+        "dropdownListId": "dropdownListCompany"
+      },
+      {
+        "id": "btnCustomerChoice",
+        "text": "Chọn khách hàng muốn tạo mới",
+        "dropdownListId": "dropdownListCustomer"
+      },
+      {
+        "id": "btnPestControlServiceTypeInsec",
+        "text": "Chọn gói dịch vụ giải pháp\n                        \n                            keyboard_arrow_down",
+        "dropdownListId": "dropdownListInsecType"
+      },
+      {
+        "id": "btnPestControlServiceTypeHouse",
+        "text": "Chọn loại nhà\n                        \n                            keyboard_arrow_down",
+        "dropdownListId": "dropdownListHouseType"
+      },
+      {
+        "id": "btnForeignLanguageChoice",
+        "text": "Không",
+        "dropdownListId": "dropdownListForeignLanguage"
+      },
+      {
+        "id": "btnVoucherChoice",
+        "text": "Chọn mã giảm giá\n                                        \n                                            \n                                                close\n                                            \n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "dropdownListPromotion"
+      },
+      {
+        "id": "btnCommissionType",
+        "text": "%\n                                            \n                                                keyboard_arrow_down",
+        "dropdownListId": "commissionTypeList"
+      },
+      {
+        "id": "btnPaymentMethodChoice",
+        "text": "Tiền mặt/Chuyển khoản",
+        "dropdownListId": "dropdownListPaymentMethod"
+      }
+    ],
+    "optionLabels": [
+      "No",
+      "Yes",
+      "* Dịch vụ",
+      "Cá nhân",
+      "Công ty",
+      "* Tên khách hàng",
+      "Tên khách hàng *",
+      "Số điện thoại *",
+      "Ngày sinh",
+      "Email *",
+      "Mật khẩu *",
+      "Xác nhận mật khẩu *",
+      "Mã giới thiệu",
+      "Tự động tạo mật khẩu và Mã giới thiệu",
+      "Mã người giới thiệu (optional)",
+      "Chọn gói dịch vụ giải pháp",
+      "Chọn loại nhà bạn muốn xử lý",
+      "Mô tả tình trạng",
+      "Nhân viên biết ngoại ngữ",
+      "Hình ảnh thực tế",
+      "Loại booking",
+      "Một lần",
+      "Định kỳ",
+      "Ngày làm việc",
+      "Từ",
+      "Đến",
+      "Ngày bắt đầu",
+      "Kết thúc trong",
+      "Giờ bắt đầu",
+      "Tần suất ca làm",
+      "Lịch làm việc (preview)",
+      "Mã giảm giá",
+      "Giảm giá",
+      "Adjustment",
+      "Phương thức thanh toán",
+      "Lương thực nhận (VND)",
+      "Hide empty tabs until they have data",
+      "Automatically show new incoming Ajax requests",
+      "Autoshow"
+    ]
+  }
+}
