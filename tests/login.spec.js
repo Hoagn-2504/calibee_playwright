@@ -1,26 +1,17 @@
-import { test, expect } from '@playwright/test';
-
-test.use({ storageState: { cookies: [], origins: [] } });
-
-const requiredEnv = (name) => {
-  if (!process.env[name]) throw new Error(`Missing required environment variable: ${name}`);
-  return process.env[name];
-};
-const ADMIN_BASE_URL = process.env.ADMIN_BASE_URL || 'https://admin.calibee.vn';
-const ADMIN_EMAIL = requiredEnv('ADMIN_EMAIL');
-const ADMIN_PASSWORD = requiredEnv('ADMIN_PASSWORD');
-const LOGIN_URL = `${ADMIN_BASE_URL}/login`;
+import { test, expect } from './fixtures/admin.fixture.js';
+import { adminConfig } from './support/env.js';
+import { LoginPage } from './pages/LoginPage.js';
 
 const cases = [
   {
     name: 'success',
-    email: ADMIN_EMAIL,
-    password: ADMIN_PASSWORD,
+    email: adminConfig.email,
+    password: adminConfig.password,
     success: true,
   },
   {
     name: 'wrong password',
-    email: ADMIN_EMAIL,
+    email: adminConfig.email,
     password: '123',
     success: false,
     expectedError: 'auth.failed',
@@ -28,7 +19,7 @@ const cases = [
   {
     name: 'wrong email',
     email: 'fake@gmail.com',
-    password: ADMIN_PASSWORD,
+    password: adminConfig.password,
     success: false,
     expectedError: 'auth.failed',
   },
@@ -43,14 +34,13 @@ const cases = [
 
 for (const c of cases) {
   test(`Login ${c.name}`, async ({ page }) => {
-    await page.goto(LOGIN_URL, { waitUntil: 'networkidle' });
+    const loginPage = new LoginPage(page, adminConfig.baseUrl);
 
-    await page.getByRole('textbox', { name: 'Enter your registered work' }).fill(c.email);
-    await page.getByRole('textbox', { name: 'Enter your password' }).fill(c.password);
-    await page.locator('button[type="submit"], form button').first().click();
+    await loginPage.goto();
+    await loginPage.submit(c.email, c.password);
 
     if (c.success) {
-      await expect(page).toHaveURL(`${ADMIN_BASE_URL}/`, { timeout: 15000 });
+      await expect(page).toHaveURL(`${adminConfig.baseUrl}/`, { timeout: 15000 });
       return;
     }
 

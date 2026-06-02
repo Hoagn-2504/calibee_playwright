@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "playwright test",
+    "test:smoke": "playwright test tests/login.spec.js tests/dashboard.spec.js tests/list_pages.spec.js --project=chromium",
+    "test:regression": "playwright test --project=chromium",
     "test:booking": "playwright test tests/book_service.spec.js --project=chromium",
     "test:booking:headed": "playwright test tests/book_service.spec.js --project=chromium --headed",
     "analyze:services": "playwright test tests/analyze_services.spec.js --project=chromium"
@@ -16,7 +18,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Hoagn-2504/calibee_playwright/issues"
   },

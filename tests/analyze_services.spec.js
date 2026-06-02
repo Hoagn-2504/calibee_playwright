@@ -1,16 +1,14 @@
 import { test, expect } from '@playwright/test';
 import * as fs from 'fs';
 import * as path from 'path';
+import { adminConfig } from './support/env.js';
+import { emptyStorageState } from './support/auth.js';
 
-test.use({ storageState: { cookies: [], origins: [] } });
+test.use({ storageState: emptyStorageState });
 
-const requiredEnv = (name) => {
-  if (!process.env[name]) throw new Error(`Missing required environment variable: ${name}`);
-  return process.env[name];
-};
-const ADMIN_BASE_URL = process.env.ADMIN_BASE_URL || 'https://admin.calibee.vn';
-const ADMIN_EMAIL = requiredEnv('ADMIN_EMAIL');
-const ADMIN_PASSWORD = requiredEnv('ADMIN_PASSWORD');
+const ADMIN_BASE_URL = adminConfig.baseUrl;
+const ADMIN_EMAIL = adminConfig.email;
+const ADMIN_PASSWORD = adminConfig.password;
 
 test('Analyze and write form structures', async ({ page }) => {
   test.setTimeout(180000);
@@ -44,7 +42,8 @@ test('Analyze and write form structures', async ({ page }) => {
 
   for (const code of services) {
     await page.goto(`${ADMIN_BASE_URL}/bookings/create?service=${code}`);
-    await page.waitForTimeout(3000);
+    await expect(page.locator('#voyager-loader')).toBeHidden({ timeout: 15000 }).catch(() => {});
+    await expect(page.locator('#btnCustomerChoice')).toBeVisible({ timeout: 15000 });
 
     const dropdowns = await page.evaluate(() => {
       const elements = Array.from(document.querySelectorAll('.btn-show-dropdown'));

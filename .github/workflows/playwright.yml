@@ -17,8 +17,8 @@ jobs:
       ADMIN_BASE_URL: ${{ secrets.ADMIN_BASE_URL }}
       ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
       ADMIN_PASSWORD: ${{ secrets.ADMIN_PASSWORD }}
-      BOOKING_SERVICE_MODE: random
-      BOOKING_SERVICE: random
+      BOOKING_SERVICE_MODE: fixed
+      BOOKING_SERVICE: basic_cleaning
       UPDATE_BOOKING_STATUS: "false"
     steps:
       - uses: actions/checkout@v4
@@ -28,8 +28,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
-      - name: Run list pages test
-        run: npx playwright test tests/list_pages.spec.js --project=chromium
+      - name: Run smoke tests
+        run: npm run test:smoke
       - uses: actions/upload-artifact@v4
         if: ${{ failure() }}
         with:

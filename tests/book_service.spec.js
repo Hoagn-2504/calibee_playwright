@@ -1,22 +1,20 @@
 ﻿import { test, expect } from '@playwright/test';
+import { bookingConfig, adminConfig } from './support/env.js';
+import { emptyStorageState, loginAsAdmin } from './support/auth.js';
+import { resolveBookingService } from './data/bookingServices.js';
+import { BookingCreatePage } from './pages/BookingCreatePage.js';
 
 // Bỏ qua global storageState để test tự thực hiện login từ đầu
-test.use({ storageState: { cookies: [], origins: [] } });
+test.use({ storageState: emptyStorageState });
 test.describe.configure({ mode: 'serial' });
 
-const requiredEnv = (name) => {
-  if (!process.env[name]) throw new Error(`Missing required environment variable: ${name}`);
-  return process.env[name];
-};
-const ADMIN_BASE_URL = process.env.ADMIN_BASE_URL || 'https://admin.calibee.vn';
-const ADMIN_EMAIL = requiredEnv('ADMIN_EMAIL');
-const ADMIN_PASSWORD = requiredEnv('ADMIN_PASSWORD');
-const BOOKING_SERVICE = process.env.BOOKING_SERVICE || 'random';
-const BOOKING_SERVICE_MODE = process.env.BOOKING_SERVICE_MODE || 'random';
-const CUSTOMER_QUERY = process.env.CUSTOMER_QUERY || 'CUS-1 | Calibee Support |';
-const SHOULD_UPDATE_STATUS = process.env.UPDATE_BOOKING_STATUS === 'true';
-const TEST_TIMEOUT_MS = Number(process.env.TEST_TIMEOUT_MS || 300000);
-const CALCULATE_ONLY = process.env.CALCULATE_ONLY === 'true';
+const ADMIN_BASE_URL = adminConfig.baseUrl;
+const BOOKING_SERVICE = bookingConfig.service;
+const BOOKING_SERVICE_MODE = bookingConfig.serviceMode;
+const CUSTOMER_QUERY = bookingConfig.customerQuery;
+const SHOULD_UPDATE_STATUS = bookingConfig.shouldUpdateStatus;
+const TEST_TIMEOUT_MS = bookingConfig.timeoutMs;
+const CALCULATE_ONLY = bookingConfig.calculateOnly;
 let selectedTimeRange;
 
 function getBookingTimeRange() {
@@ -24,22 +22,44 @@ function getBookingTimeRange() {
     return selectedTimeRange;
   }
 
-  const durationHours = randomInt(2, 8);
-  const startHour = randomInt(8, 22 - durationHours);
+  if (bookingConfig.timeMode === 'random') {
+    expect(
+      bookingConfig.minDurationHours,
+      'BOOKING_MIN_DURATION_HOURS must be at least 2.'
+    ).toBeGreaterThanOrEqual(2);
+    expect(
+      bookingConfig.maxDurationHours,
+      'BOOKING_MAX_DURATION_HOURS must be less than or equal to 8.'
+    ).toBeLessThanOrEqual(8);
+    expect(
+      bookingConfig.maxDurationHours,
+      'BOOKING_MAX_DURATION_HOURS must be greater than or equal to BOOKING_MIN_DURATION_HOURS.'
+    ).toBeGreaterThanOrEqual(bookingConfig.minDurationHours);
+
+    const durationHours = randomInt(
+      bookingConfig.minDurationHours,
+      bookingConfig.maxDurationHours
+    );
+    const startHour = randomInt(8, 22 - durationHours);
+    const start = formatHour(startHour);
+    const end = formatHour(startHour + durationHours);
+
+    selectedTimeRange = {
+      start,
+      end,
+      durationHours,
+    };
+    return selectedTimeRange;
+  }
+
+  const start = bookingConfig.startTime;
+  const end = bookingConfig.endTime;
   selectedTimeRange = {
-    start: formatHour(startHour),
-    end: formatHour(startHour + durationHours),
-    durationHours,
+    start,
+    end,
+    durationHours: calculateDurationHours(start, end),
   };
   return selectedTimeRange;
-}
-
-function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function formatHour(hour) {
-  return `${String(hour).padStart(2, '0')}:00`;
 }
 
 function calculateDurationHours(startTime, endTime) {
@@ -50,115 +70,21 @@ function calculateDurationHours(startTime, endTime) {
   return durationHours;
 }
 
-// ================================================================
-// CẤU HÌNH CÁC DỊCH VỤ - dựa trên phân tích thực tế DOM
-// ================================================================
-const SERVICE_CONFIG = {
-  basic_cleaning: {
-    name: 'Dọn dẹp cơ bản',
-    dropdownsToFill: ['btnTotalAreaChoice'],
-    scheduleSelectGroups: 0, // Không cần chọn schedule-select
-  },
-  subscription_service: {
-    name: 'Dọn dẹp định kỳ',
-    dropdownsToFill: ['btnTotalAreaChoice', 'btnPackageChoice'],
-    needsWeekday: true,
-    hasStartEndDate: true,
-  },
-  deep_cleaning: {
-    name: 'Tổng vệ sinh',
-    dropdownsToFill: ['btnTotalAreaChoice', 'choiceAmountPartner'],
-  },
-  air_condition: {
-    name: 'Dịch vụ máy lạnh',
-    dropdownsToFill: [],
-    needsAirConType: true,
-  },
-  sofa_service: {
-    name: 'Giặt sofa, thảm,...',
-    dropdownsToFill: ['btnTimeFrameTimeChoice'],
-    needsSofaType: true,
-  },
-  cooking_service: {
-    name: 'Nấu ăn tại nhà',
-    dropdownsToFill: ['btnAmountEaterChoice', 'btnTasteByRegionChoice'],
-    needsCookingSpecific: true,
-    allowNoCalculatedFee: true,
-  },
-  elderly_care: {
-    name: 'Chăm sóc người già',
-    dropdownsToFill: ['btnMobilityCondition'],
-    needsElderlySpecific: true,
-    allowNoCalculatedFee: true,
-  },
-  baby_service: {
-    name: 'Trông trẻ',
-    dropdownsToFill: [],
-    needsBabySpecific: true,
-  },
-  cleaning_after_construction: {
-    name: 'Vệ sinh sau xây dựng',
-    dropdownsToFill: ['btnAmountWorkerChoice'],
-    allowNoCalculatedFee: true,
-  },
-  electrical_service: {
-    name: 'Hệ thống điện',
-    dropdownsToFill: [],
-    needsScheduleSelects: true, // Cần click .schedule-select items
-  },
-  plumbing_service: {
-    name: 'Hệ thống nước',
-    dropdownsToFill: [],
-    needsScheduleSelects: true, // Cần click .schedule-select items
-  },
-  furniture_service: {
-    name: 'Sửa nội thất',
-    dropdownsToFill: [],
-    needsScheduleSelects: true, // Cần click .schedule-select items
-  },
-  locksmith: {
-    name: 'Sửa khóa',
-    dropdownsToFill: [
-      'btnLocksmithServiceTypeChoice',
-      'btnLocksmithTypeChoice',
-      'btnLocksmithDoorTypeChoice',
-      'btnLocksmithKeyTypeChoice',
-      'btnEstimateTimeChoice',
-      'btnTimeFrameTimeChoice',
-    ],
-    allowNoCalculatedFee: true,
-  },
-  paint_house_service: {
-    name: 'Sơn nhà',
-    dropdownsToFill: [
-      'btnPaintServiceTypeChoice',
-      'btnPaintTypeChoice',
-      'btnTotalSquareChoice',
-      'btnCurrentSituationChoice',
-    ],
-    allowNoCalculatedFee: true,
-  },
-  pest_control: {
-    name: 'Phun diệt côn trùng',
-    dropdownsToFill: [
-      'btnPestControlServiceTypeInsec',
-      'btnPestControlServiceTypeHouse',
-    ],
-    needsPestSpecific: true,
-  },
-};
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function formatHour(hour) {
+  return `${String(hour).padStart(2, '0')}:00`;
+}
 
 test('Tạo booking qua Admin', async ({ page }) => {
   test.setTimeout(TEST_TIMEOUT_MS);
+  const bookingPage = new BookingCreatePage(page, ADMIN_BASE_URL);
 
   // 1. Đăng nhập
   await test.step('Đăng nhập admin', async () => {
-    await page.goto(`${ADMIN_BASE_URL}/login`, { waitUntil: 'domcontentloaded' });
-    await page.getByRole('textbox', { name: 'Enter your registered work' }).fill(ADMIN_EMAIL);
-    await page.getByRole('textbox', { name: 'Enter your password' }).fill(ADMIN_PASSWORD);
-    await page.locator('button[type="submit"], form button').first().click();
-    await expect(page).toHaveURL(`${ADMIN_BASE_URL}/`, { timeout: 15000 });
-    await expect(page.locator('#voyager-loader')).toBeHidden({ timeout: 15000 }).catch(() => {});
+    await loginAsAdmin(page);
   });
 
   // 2. Chọn dịch vụ cần test
@@ -167,49 +93,24 @@ test('Tạo booking qua Admin', async ({ page }) => {
   let selectedAddressState;
 
   await test.step('Chuyển tới form tạo Booking mới', async () => {
-    const serviceCodes = Object.keys(SERVICE_CONFIG);
-    serviceCode = BOOKING_SERVICE_MODE !== 'fixed' || BOOKING_SERVICE === 'random'
-      ? serviceCodes[Math.floor(Math.random() * serviceCodes.length)]
-      : BOOKING_SERVICE;
-
-    expect(
-      serviceCodes,
-      `BOOKING_SERVICE không hợp lệ: "${serviceCode}". Dùng một trong: ${serviceCodes.join(', ')} hoặc "random".`
-    ).toContain(serviceCode);
-
-    serviceConfig = SERVICE_CONFIG[serviceCode];
+    ({ serviceCode, serviceConfig } = resolveBookingService({
+      serviceMode: BOOKING_SERVICE_MODE,
+      service: BOOKING_SERVICE,
+    }));
 
     console.log(`\n==================================================`);
     console.log(`TEST SERVICE: [${serviceConfig.name}] (${serviceCode})`);
     console.log(`==================================================\n`);
 
-    await page.goto(`${ADMIN_BASE_URL}/bookings/create?service=${serviceCode}`, { waitUntil: 'domcontentloaded' });
-    await expect(page.locator('#btnCustomerChoice')).toBeVisible({ timeout: 15000 });
-    await expect(page.locator('#voyager-loader')).toBeHidden({ timeout: 15000 }).catch(() => {});
+    await bookingPage.goto(serviceCode);
   });
 
   // 3. Chọn khách hàng và địa chỉ
   await test.step('Chọn khách hàng và địa chỉ', async () => {
-    // Dùng JS click để bypass backdrop/overlay có thể che phủ
-    await clickBySelector(page, '#btnCustomerChoice');
-    await expect(page.locator('#dropdownListCustomer')).toBeVisible({ timeout: 5000 });
-    
-    // Click customer được cấu hình; fallback sang option thật đầu tiên
-    const cusOption = page.locator('#dropdownListCustomer .dropdown-item-label').getByText(CUSTOMER_QUERY);
-    if (await cusOption.isVisible({ timeout: 3000 }).catch(() => false)) {
-      await cusOption.click({ force: true });
-    } else {
-      // Fallback: click option đầu tiên không phải "Thêm khách hàng"
-      const firstRealOpt = page.locator('#dropdownListCustomer .dropdown-item-label').filter({ visible: true }).nth(1);
-      await expect(firstRealOpt, `Không tìm thấy customer "${CUSTOMER_QUERY}" và không có customer fallback.`).toBeVisible({ timeout: 5000 });
-      await firstRealOpt.click({ force: true });
-    }
-    await expect(page.locator('#voyager-loader')).toBeHidden({ timeout: 15000 }).catch(() => {});
-    await page.waitForTimeout(800);
+    await bookingPage.selectCustomer(CUSTOMER_QUERY);
 
     selectedAddressState = await selectFirstAddress(page);
     await expect(page.locator('#voyager-loader')).toBeHidden({ timeout: 15000 }).catch(() => {});
-    await page.waitForTimeout(700);
   });
 
 
@@ -359,16 +260,6 @@ test('Tạo booking qua Admin', async ({ page }) => {
 // ================================================================
 // HELPER FUNCTIONS
 // ================================================================
-
-async function clickBySelector(page, selector) {
-  await page.evaluate((sel) => {
-    const element = document.querySelector(sel);
-    if (!element) {
-      throw new Error(`Không tìm thấy element: ${sel}`);
-    }
-    element.click();
-  }, selector);
-}
 
 async function selectFirstAddress(page) {
   const firstAddressRow = page.locator('#tbodyAddressTable tr, table tbody tr')
@@ -927,7 +818,10 @@ async function setAllMatchingInputs(page, selectors, value, options = {}) {
       const handle = await input.elementHandle().catch(() => null);
       if (!handle) continue;
 
-      const key = await handle.evaluate(el => el.id || el.name || el.getAttribute('placeholder') || el.className || Math.random().toString());
+      const key = await handle.evaluate(
+        (el, fallbackKey) => el.id || el.name || el.getAttribute('placeholder') || el.className || fallbackKey,
+        `${selector}-${i}`
+      );
       const visible = await input.isVisible().catch(() => false);
       if (!visible && !String(key).includes('Time') && !String(key).includes('Date')) {
         continue;
@@ -1878,7 +1772,7 @@ async function fillWeeklyDays(page) {
 async function fillDateTimeFields(page, serviceCode = '') {
   console.log('=> Điền ngày và giờ...');
   const timeRange = getBookingTimeRange();
-  console.log(`   -> Khung giờ random: ${timeRange.start} - ${timeRange.end} (${timeRange.durationHours} tiếng)`);
+  console.log(`   -> Khung giờ cấu hình: ${timeRange.start} - ${timeRange.end} (${timeRange.durationHours} tiếng)`);
 
   const tomorrow = new Date();
   const daysAhead = ['cooking_service', 'elderly_care', 'pest_control'].includes(serviceCode) ? 7 : 1;
@@ -1997,3 +1891,6 @@ async function fillDateTimeFields(page, serviceCode = '') {
 
   console.log(`   -> Đã điền ${filledDateIds.size} ô ngày và ${filledTimeIds.size} ô giờ`);
 }
+
+
+
