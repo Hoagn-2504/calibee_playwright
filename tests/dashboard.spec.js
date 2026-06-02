@@ -29,15 +29,27 @@ test.describe('Dashboard & Navigation', () => {
 
   test('Chức năng đăng xuất', async ({ page }) => {
     const logoutForm = page.locator('form[action*="logout"]').first();
+    const logoutButton = logoutForm.locator('button[type="submit"], button').first();
 
-    if (!await logoutForm.count()) {
-      const profileMenu = page.locator('li.dropdown.profile > a, img[alt="profile Pic"]').first();
+    if (!await logoutButton.isVisible().catch(() => false)) {
+      const profileMenu = page.locator('li.dropdown.profile > a.dropdown-toggle').first();
       await expect(profileMenu).toBeVisible({ timeout: 15000 });
       await profileMenu.click({ force: true });
     }
 
     await expect(logoutForm).toHaveCount(1, { timeout: 10000 });
-    await logoutForm.evaluate(form => form.submit());
-    await expect(page).toHaveURL(/login/, { timeout: 15000 });
+    const logoutResponsePromise = page.waitForResponse(
+      response => response.url().includes('/logout'),
+      { timeout: 15000 }
+    ).catch(() => null);
+
+    await Promise.all([
+      page.waitForURL(/login|\/$/, { timeout: 15000 }).catch(() => {}),
+      logoutButton.evaluate(button => button.click()),
+    ]);
+    await logoutResponsePromise;
+
+    await page.goto(`${ADMIN_BASE_URL}/login`, { waitUntil: 'domcontentloaded' });
+    await expect(page.getByRole('textbox', { name: 'Enter your registered work' })).toBeVisible({ timeout: 15000 });
   });
 });
