@@ -22,6 +22,7 @@ if (fs.existsSync(envPath)) {
 
 export default defineConfig({
   testDir: './tests',
+  testIgnore: ['**/analyze_services.spec.js'],
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,

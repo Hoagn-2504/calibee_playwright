@@ -17,8 +17,8 @@ jobs:
       run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
-    - name: Run booking test
-      run: npm run test:booking
+    - name: Run list pages test
+      run: npx playwright test tests/list_pages.spec.js --project=chromium
       env:
         ADMIN_BASE_URL: ${{ secrets.ADMIN_BASE_URL }}
         ADMIN_EMAIL: ${{ secrets.ADMIN_EMAIL }}
